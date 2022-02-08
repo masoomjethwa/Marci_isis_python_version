@@ -10,7 +10,7 @@ set map=$1
 set del=$2
 
 ##marci2isis 
-foreach i (*.[I][M][G])
+foreach i (*.IMG)
   set base=`basename $i .IMG`
   set new="$base.cub"
   echo marci2isis "from=$i to=$new"
