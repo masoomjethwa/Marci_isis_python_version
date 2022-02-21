@@ -25,9 +25,9 @@ end
 ##spiceinit
 foreach i (*.cub)
   #echo spiceinit "from=$i"
-  echo spiceinit "from=$i"
+  echo spiceinit "from=$i web=true"
   #spiceinit from=$i
-  spiceinit from=$i
+  spiceinit from=$i web=true
 end
 
 ##marcical 
