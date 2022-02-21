@@ -43,4 +43,4 @@ printf "Group=Mapping\n TargetName=Mars\n LongitudeDomain=360\n ProjectionName=S
 ```
 ./marci_all.csh try1.map 0
 ```
-The last argument 0 means during the execution, all files are kept but for 1, the old files are deleted. 
+The last argument 0 means during the execution, all files are kept but if it is 1, the old files are deleted. 
