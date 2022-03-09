@@ -18,7 +18,7 @@ and check that ISIS is working properly or not.
 cd $ISISDATA
 rsync -azv --exclude='kernels' --delete --partial isisdist.astrogeology.usgs.gov::isisdata/data/mro .
 ```
-No need to download the kernels as they are too big in size. So, it takes a lot of time to download and it also takes a lot of storage space. The kernels can be attached later through SPICE WEB service later.
+No need to download the kernels as they are too big in size. So, it takes a lot of time to download and it also takes a lot of storage space. The kernels can be attached later through SPICE WEB service later (see the code for reference).
 
 4.Now, download the images from PDS Cartography and Imaging Sciences Node and save them in a local folder. One can use commands like the one below for downloading the images:
 ```
@@ -44,3 +44,14 @@ printf "Group=Mapping\n TargetName=Mars\n LongitudeDomain=360\n ProjectionName=S
 ./marci_all.csh try1.map 0
 ```
 The last argument 0 means during the execution, all files are kept but if it is 1, the old files are deleted. 
+
+Sometime the camera model may require local kernels and one can encounter error while running cam2map. For that, a few small kernels are required to be locally downloaded. The solution is (Considering one already has mro SPICE data locally saved. See part3 of workflow):
+```
+cd $ISISDATA/mro
+mkdir kernels
+cd kernels
+rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::isisdata/data/mro/kernels/fk .
+rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::isisdata/data/mro/kernels/iak .
+rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::isisdata/data/mro/kernels/ik .
+rsync -azv --delete --partial isisdist.astrogeology.usgs.gov::isisdata/data/mro/kernels/sclk .
+```
