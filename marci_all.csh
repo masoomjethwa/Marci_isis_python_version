@@ -41,11 +41,20 @@ foreach i (*.cub)
   endif
 end
 
-
- 
-##cam2map
+##explode
 foreach i (*.lev1.cub)
   set base=`basename $i .lev1.cub`
+  set new="$base"
+  echo explode "from=$i to=$new" ##The output file will be named base.band#.cub. #is the number of band.
+  explode from=$i to=$new
+  if (-e $new && $del) then
+    /bin/rm $i
+  endif
+end
+ 
+##cam2map
+foreach i (*.band#.cub)
+  set base=`basename $i .band#.cub`
   set new="$base.lev2.cub"
   echo cam2map "from=$i map=$map to=$new"
   cam2map from=$i map=$map to=$new
