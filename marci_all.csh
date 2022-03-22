@@ -53,8 +53,8 @@ foreach i (*.lev1.cub)
 end
  
 ##cam2map
-foreach i (*.band#.cub)
-  set base=`basename $i .band#.cub`
+foreach i (*.band*.cub)
+  set base=`basename $i .band*.cub`
   set new="$base.lev2.cub"
   echo cam2map "from=$i map=$map to=$new"
   cam2map from=$i map=$map to=$new
