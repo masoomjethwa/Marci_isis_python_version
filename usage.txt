@@ -1,0 +1,11 @@
+1. Example Usage
+python marci_isis_processing.py path/to/maptemplate.map 0
+
+
+Logs will be saved in ./marci_isis_processing.log.
+
+2. Usage in MARCI Processing
+
+You can pass this file to the enhanced MARCI pipeline like:
+
+python marci_isis_processing.py try1.map 0
