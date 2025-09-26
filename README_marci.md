@@ -1,4 +1,3 @@
-Here’s a clean, modern, and professional `README.md` tailored to the refactored **MRO MARCI ISIS image processing pipeline**, including usage examples, dependencies, and setup instructions.
 
 ---
 
@@ -182,4 +181,4 @@ If you encounter issues, please:
 2. Check `marci_isis_processing.log` for detailed error messages.
 3. Verify your `.IMG` files are complete and valid.
 ```
----
+
